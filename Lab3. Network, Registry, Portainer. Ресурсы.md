@@ -46,7 +46,7 @@ docker run -d -p 9000:9000 --restart always -v "/var/run/docker.sock:/var/run/do
 ```
 Мы успешно загрузили docker registry, docker registry от jc21 и Portainer. 
 
-Подключаемся к серверу Shipyard и настраиваем управление.
+Подключаемся к серверу Portainer и можем работать с контейнерами.
 
 ## Шаг 3. Установка лимитов.
 Запускаем контейнер на apache и вводим лимиты.
