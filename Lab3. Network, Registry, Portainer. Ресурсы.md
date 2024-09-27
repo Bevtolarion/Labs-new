@@ -30,7 +30,7 @@ docker volume rm $(docker volume ls -q)
 ```
 docker system prune -a
 ```
-## Шаг 2. Установка докер регистри от jc21/registry-ui
+## Шаг 2. Установка докер регистри от jc21/registry-ui и portainer.
 ```
 docker run -d -p 5000:5000 --name registry registry:2
 ```
@@ -42,9 +42,9 @@ docker run -d -p 8080:80 -e REGISTRY_TITLE="My Registry" -e REGISTRY_URL=http://
 Добавляем jc21/registry-ui
 
 ```
-docker run -d --name shipyard -p 8080:8080 -e DOCKER_HOST=tcp://docker:2375 shipyard/shipyard
+docker run -d -p 9000:9000 --restart always -v "/var/run/docker.sock:/var/run/docker.sock" --name portainer portainer/portainer-ce
 ```
-Мы успешно загрузили docker registry, docker registry от jc21 и Shipyard. 
+Мы успешно загрузили docker registry, docker registry от jc21 и Portainer. 
 
 Подключаемся к серверу Shipyard и настраиваем управление.
 
